@@ -7,7 +7,7 @@ public partial class App : Application
 	{
         NavigationPage navigation = new NavigationPage(new CalculatorMainPage());
         MainPage = navigation;
-        
+        InitializeComponent();
        // HistoryVM = historyVM;
     }
 }
