@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.About"
+             Title="About"
+			 BackgroundColor="{DynamicResource PrimaryColor}">
+  
+    <StackLayout>
+            <!--<StackLayout.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="White"
+                                      Offset="0.1"/>
+                    <GradientStop Color="Black"
+                                      Offset="1.0"/>
+
+                </LinearGradientBrush>
+
+            </StackLayout.Background>-->
+            <Frame BackgroundColor="LightBlue"  Padding="24" CornerRadius="0" VerticalOptions="Start">
+                <Label Text="Our Team" HorizontalTextAlignment="Center" TextColor="Black" FontSize="36"/>
+            </Frame>
+
+            <Label Text="This MAUI application is created as a part of project in CS797R  " FontSize="Subtitle" Padding="5,10,5,10"/>
+
+            <Label Text="Our team includes:" FontSize="25" Padding="10,5,10,5"/>
+            <ListView   MaximumHeightRequest="700"   SeparatorColor="Orange" SelectionMode="None">
+                <ListView.ItemsSource >
+                    
+                    <x:Array Type="{x:Type x:String}">
+                    <x:String >G599d648
+Dokku Navya Sri</x:String>
+                    <x:String>U539A698
+Keerthana Siramsetty</x:String>
+                    <x:String>Z967J997
+Maheswara Reddy Nareddula</x:String>
+
+                    </x:Array>
+                </ListView.ItemsSource>
+           
+                
+            </ListView>
+            
+    </StackLayout>
+</ContentPage>

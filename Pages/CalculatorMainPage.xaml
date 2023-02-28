@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.CalculatorMainPage" 
+             Title="Calculator" BackgroundColor="{DynamicResource PageBackgroundColor}" >
+    <Grid Padding="8" RowSpacing="2" ColumnSpacing="2"
+          RowDefinitions="2*,*,*,*,*,*,*" 
+          ColumnDefinitions="*,*,*,*">
+
+        <Label x:Name="CurrentCalculation"
+               FontSize="28"
+               TextColor="OrangeRed"
+               LineBreakMode="NoWrap"
+               Grid.ColumnSpan="4"
+               Text=""
+               HorizontalTextAlignment="End"
+               VerticalTextAlignment="Start"
+               Grid.Row="0"/>
+
+        <Label x:Name="resultText"   TextColor="{DynamicResource SecondaryColor}"
+               FontSize="64" FontAttributes="Bold" Text="0"
+               HorizontalTextAlignment="End"
+               VerticalTextAlignment="End"
+               LineBreakMode="NoWrap"   Grid.ColumnSpan="4" />
+
+        <BoxView BackgroundColor="{DynamicResource  Blue100Accent}" HeightRequest="1"
+                 Grid.Row="0" VerticalOptions="End"
+                 Grid.ColumnSpan="4"
+                 />
+        <Button Text="C" Grid.Row="1" Grid.Column="0" TextColor="{DynamicResource SecondaryTextColor}"
+ BackgroundColor="Orange" 
+               Clicked="OnClear" />
+        <Button Routing.Route="Page1.xaml" Text="+/-" Grid.Row="1" Grid.Column="1" TextColor="{DynamicResource SecondaryTextColor}"
+               Clicked="OnNegative"  BackgroundColor="Orange"  />
+        <Button Text="%" Grid.Row="1" Grid.Column="2" TextColor="{DynamicResource SecondaryTextColor}" 
+         BackgroundColor="Orange" BorderWidth="1" CornerRadius="30"
+                Clicked="OnPercentage" />
+
+        <Button Text="√" Grid.Row="2"  BorderWidth="1" CornerRadius="30"  TextColor="{DynamicResource SecondaryTextColor}" BackgroundColor="Orange" Grid.Column="0"
+               Clicked="OnSquareRoot" />
+        <Button Text="mod" Grid.Row="2" BorderWidth="1" CornerRadius="30" TextColor="{DynamicResource SecondaryTextColor}" BackgroundColor="Orange" Grid.Column="1"
+               Clicked="OnMod"  />
+        <Button Text="(" Clicked="Button_Clicked" Grid.Row="2" BorderWidth="1" CornerRadius="30" TextColor="{DynamicResource SecondaryTextColor}" BackgroundColor="{DynamicResource Main}" Grid.Column="2"
+            
+                   />
+
+        <Button Text=")" BorderWidth="1" Clicked="Button_Clicked" CornerRadius="30"  Grid.Row="2"  TextColor="{DynamicResource SecondaryTextColor}" BackgroundColor="{DynamicResource Main}" Grid.Column="3"
+                   />
+
+        <Button Text="7" Grid.Row="3" Grid.Column="0" TextColor="{DynamicResource PrimaryTextColor}"   
+               BorderColor="{DynamicResource PrimaryTextColor}" BorderWidth="1"    
+               Clicked="OnSelectNumber" />
+        <Button Text="8" Grid.Row="3" Grid.Column="1" TextColor="{DynamicResource PrimaryTextColor}"
+                BorderColor="{DynamicResource PrimaryTextColor}" BorderWidth="1"
+               Clicked="OnSelectNumber" />
+        <Button Text="9" Grid.Row="3"  FontAttributes="Bold" TextColor="{DynamicResource PrimaryTextColor}"
+                Grid.Column="2"
+                BorderColor="{DynamicResource PrimaryTextColor}" BorderWidth="1"
+               Clicked="OnSelectNumber" />
+
+        <Button Text="4" Grid.Row="4" Grid.Column="0" TextColor="{DynamicResource PrimaryTextColor}"
+              Clicked="OnSelectNumber"
+                BorderColor="{DynamicResource PrimaryTextColor}" BorderWidth="1"/>
+        <Button Text="5" Grid.Row="4" Grid.Column="1" TextColor="{DynamicResource PrimaryTextColor}"
+              Clicked="OnSelectNumber"
+                BorderColor="{DynamicResource PrimaryTextColor}" BorderWidth="1"
+                />
+        <Button Text="6" Grid.Row="4" Grid.Column="2" TextColor="{DynamicResource PrimaryTextColor}"
+            BorderColor="{DynamicResource PrimaryTextColor}" BorderWidth="1"
+                Clicked="OnSelectNumber" />
+
+        <Button Text="1" Grid.Row="5" Grid.Column="0" TextColor="{DynamicResource PrimaryTextColor}"
+             BorderColor="{DynamicResource PrimaryTextColor}" BorderWidth="1" Clicked="OnSelectNumber" />
+        <Button Text="2" Grid.Row="5" Grid.Column="1" TextColor="{DynamicResource PrimaryTextColor}"
+              Clicked="OnSelectNumber"
+                BorderColor="{DynamicResource PrimaryTextColor}" BorderWidth="1"/>
+        <Button Text="3" Grid.Row="5" Grid.Column="2" TextColor="{DynamicResource PrimaryTextColor}"
+              Clicked="OnSelectNumber" BorderColor="{DynamicResource PrimaryTextColor}" BorderWidth="1"/>
+
+        <Button Text="00" Grid.Row="6" Grid.Column="0" 
+                BorderColor="{DynamicResource PrimaryTextColor}" BorderWidth="1"
+              Clicked="OnSelectNumber"   CornerRadius="30" TextColor="{DynamicResource SecondaryTextColor}" BackgroundColor="{DynamicResource Main}" />
+        <Button Text="0" Grid.Row="6" Grid.Column="1" BorderColor="{DynamicResource PrimaryTextColor}" BorderWidth="1"
+              Clicked="OnSelectNumber" TextColor="{DynamicResource PrimaryTextColor}" />
+        <Button Text="." Grid.Row="6" Grid.Column="2" CornerRadius="30"  TextColor="{DynamicResource SecondaryTextColor}"
+              Clicked="OnSelectNumber"  BackgroundColor="{DynamicResource Main}" />
+
+        <Button Text="÷" Grid.Row="1" Grid.Column="3" TextColor="{DynamicResource SecondaryTextColor}"
+               Clicked="OnSelectOperator" BackgroundColor="{DynamicResource Main}" BorderWidth="1" CornerRadius="30" />
+        <Button Text="×" Grid.Row="6" Grid.Column="3" TextColor="{DynamicResource SecondaryTextColor}"
+               Clicked="OnSelectOperator" BackgroundColor="{DynamicResource Main}" BorderWidth="1" CornerRadius="30" />
+        <Button Text="-" Grid.Row="3" Grid.Column="3"  TextColor="{DynamicResource SecondaryTextColor}"
+               Clicked="OnSelectOperator" BackgroundColor="{DynamicResource Main}" BorderWidth="1" CornerRadius="30" />
+        <Button Text="+" Grid.Row="4" Grid.Column="3"  TextColor="{DynamicResource SecondaryTextColor}"
+               Clicked="OnSelectOperator"  BackgroundColor="{DynamicResource Main}" BorderWidth="1" CornerRadius="30"/>
+        
+
+        <Button Text="=" Grid.Row="5" Grid.Column="3" BackgroundColor="{DynamicResource Main}"  
+              TextColor="{DynamicResource SecondaryTextColor}" CornerRadius="30"
+               Clicked="OnCalculate" />
+
+    </Grid>
+</ContentPage>

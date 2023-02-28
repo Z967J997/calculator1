@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.MenuThemes"
+             Title="Menu"
+             BackgroundColor="{DynamicResource  PageBackgroundColor}">
+
+    <Grid Margin="10 ,0 "  
+          RowDefinitions="*,*,*,*,*"
+            HeightRequest="400" HorizontalOptions="Center" VerticalOptions="Start">
+
+        <Label Text="Choose Theme " Grid.Column="0" TextColor="{ DynamicResource SecondaryTextColor}"  HorizontalTextAlignment="Center"    FontSize="30" FontAttributes="Bold"  BackgroundColor="White"
+               WidthRequest="380" HeightRequest="50"   />
+
+        <Button Text="Light" Grid.Row="1" Grid.Column="0" TextColor="{ DynamicResource SecondaryTextColor}" CornerRadius="30" BackgroundColor="White"
+              BorderWidth="3" WidthRequest="380" HeightRequest="50" Clicked="LightTheme" />
+        <Button Text="Dark" Grid.Row="2" Grid.Column="0" TextColor="White"
+                BorderWidth="3" BackgroundColor= "Black" WidthRequest="380" CornerRadius="30" HeightRequest="50" Clicked="DarkTheme"/>
+        <Button Text="Red" Grid.Row="3" Grid.Column="0" TextColor="{ DynamicResource TertiaryTextColor}"
+                BorderWidth="3" BackgroundColor="Red" WidthRequest="380" HeightRequest="50" CornerRadius="30" Clicked="RedTheme"/>
+        <Button Text="Pink" Grid.Row="4" Grid.Column="0" TextColor="Black"
+               BorderWidth="3"    BackgroundColor="Pink" WidthRequest="380" HeightRequest="50" Clicked="PinkTheme" CornerRadius="30"/>
+
+    </Grid> 
+
+</ContentPage>
